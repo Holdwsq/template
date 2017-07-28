@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="template-admin" />
+        <module name="template-base" />
+        <module name="template-domain" />
+        <module name="template-http" />
+        <module name="template-mobile" />
+        <module name="template-service" />
+        <module name="template-war" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="template" target="1.5" />
+      <module name="template-admin" target="1.5" />
+      <module name="template-base" target="1.5" />
+      <module name="template-domain" target="1.5" />
+      <module name="template-http" target="1.5" />
+      <module name="template-mobile" target="1.5" />
+      <module name="template-service" target="1.5" />
+      <module name="template-war" target="1.5" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

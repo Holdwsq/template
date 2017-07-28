@@ -1,0 +1,12 @@
+{
+  "name": "集中管控api",
+  "version": "1.3.0",
+  "description": "集中管控的API文档",
+  "title": "集中管控api",
+  "url" : "http://localhost:2010/pmmc-web",
+  "sampleUrl": "http://localhost:2010/pmmc-web",
+  "template": {
+  	"withCompare": true,
+  	"withGenerator": true
+  }
+}

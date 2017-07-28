@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: io.jsonwebtoken:jjwt:0.7.0-FASTJSON">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/io/jsonwebtoken/jjwt/0.7.0-FASTJSON/jjwt-0.7.0-FASTJSON.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/io/jsonwebtoken/jjwt/0.7.0-FASTJSON/jjwt-0.7.0-FASTJSON-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/io/jsonwebtoken/jjwt/0.7.0-FASTJSON/jjwt-0.7.0-FASTJSON-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

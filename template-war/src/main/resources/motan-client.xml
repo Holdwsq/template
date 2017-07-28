@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xmlns:motan="http://api.weibo.com/schema/motan"
+xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans-4.2.xsd
+   	http://api.weibo.com/schema/motan 
+   	http://api.weibo.com/schema/motan.xsd">
+ 	
+ 	<!--使用ZooKeeper作为注册中心
+	<motan:registry regProtocol="zookeeper" name="my_zookeeper" address="192.168.9.51:2181"/>
+ 	-->
+ 	<!--direct 点对点直连服务-->
+	<motan:registry regProtocol="direct" address="127.0.0.1" name="my_registry" port="8002"/>
+	
+ 	<!-- motan协议配置 -->
+	<motan:protocol default="true" name="motan" haStrategy="failover" 
+		loadbalance="roundrobin" maxClientConnection="10" minClientConnection="2"/>
+ 	
+ 	<!-- 通用referer基础配置 -->
+	<motan:basicReferer requestTimeout="200" accessLog="false"
+		retries="2" group="template-rpc-group" module="template-rpc-module"
+		application="template-app" protocol="motan" registry="my_registry"
+		id="motanClientBasicConfig" throwException="false" check="true"/>
+ 	
+    <motan:referer id="helloService" 
+    	interface="com.xdja.template.demo.service.HelloService" 
+    	basicReferer="motanClientBasicConfig"/>
+</beans>

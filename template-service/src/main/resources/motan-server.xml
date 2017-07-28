@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:motan="http://api.weibo.com/schema/motan"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans 
+    	http://www.springframework.org/schema/beans/spring-beans-4.2.xsd
+    	http://www.springframework.org/schema/context
+    	http://www.springframework.org/schema/context/spring-context-4.2.xsd
+   		http://api.weibo.com/schema/motan 
+   		http://api.weibo.com/schema/motan.xsd">
+    
+    <context:component-scan base-package="com.xdja.template.**" /> 
+    
+    <!-- 使用ZooKeeper作为注册中心
+	<motan:registry regProtocol="zookeeper" name="my_zookeeper" 
+		address="192.168.9.51:2181"/>
+    -->
+     
+    <motan:protocol id="template_motan" default="true" name="template_motan" 
+    	maxServerConnection="2000" maxContentLength="1048576"
+    	maxWorkerThread="800" minWorkerThread="20"/>
+	    
+   	<motan:basicService export="template_motan:8002"
+					group="template-rpc-group" accessLog="false" shareChannel="true" 
+					module="template-rpc-module"
+					application="template-app" id="serviceBasicConfig" />
+					<!--如果使用zookeeper，在basicService最后添加 registry="my_zookeeper" -->
+    
+    <motan:service interface="com.xdja.template.demo.service.HelloService" 
+    	ref="helloServiceImpl" basicService="serviceBasicConfig" />
+    
+    
+</beans>
